@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: mi-backend
+    env: java
+    buildCommand: "./mvnw clean install"
+    startCommand: "java -jar target/demo-0.0.1-SNAPSHOT.jar"
+    plan: free
+    envVars:
+      - key: JAVA_VERSION
+        value: 17
+      - key: DB_URL
+        sync: false
+        value: jdbc:postgresql://dpg-crmboc9u0jms73e8a770-a.oregon-postgres.render.com/act5
+      - key: DB_USERNAME
+        sync: false
+        value: act5_user
+      - key: DB_PASSWORD
+        sync: false
+        value: BXuc8zXpH3ATcf766ktuhy4fAx0cMSYh
